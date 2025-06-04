@@ -3,111 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Information Form</title>
+    <title>My Responsive Page</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom font for the entire page */
+        /* Custom styles for better aesthetics and font */
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: "Inter", sans-serif;
         }
     </style>
 </head>
-<body class="flex items-center justify-center min-h-screen p-4 bg-gray-100">
-    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-2xl border border-gray-200">
-        <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Personal Information Form</h2>
-        <form class="space-y-6">
-            <div>
-                <label for="fullName" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name"
-                       class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition duration-150 ease-in-out"
-                       required>
-            </div>
+<body class="min-h-screen bg-gray-100 flex flex-col">
 
-            <div>
-                <label for="dob" class="block text-sm font-medium text-gray-700 mb-1">Date of Birth</label>
-                <input type="date" id="dob" name="dob"
-                       class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition duration-150 ease-in-out"
-                       required>
-            </div>
+    <!-- Header Section -->
+    <header class="bg-indigo-700 text-white p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold">MyBrand</a>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#hero-section" class="hover:text-indigo-200 transition-colors">Home</a></li>
+                    <li><a href="#about" class="hover:text-indigo-200 transition-colors">About</a></li>
+                    <li><a href="#contact" class="hover:text-indigo-200 transition-colors">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-            <div>
-                <label for="address" class="block text-sm font-medium text-gray-700 mb-1">Address</label>
-                <textarea id="address" name="address" rows="3" placeholder="Enter your full address"
-                          class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition duration-150 ease-in-out"
-                          required></textarea>
-            </div>
+    <main class="flex-grow">
+        <!-- Hero Section with User Registration Form -->
+        <section id="hero-section" class="relative bg-gradient-to-br from-purple-600 to-indigo-800 text-white py-20 px-4 sm:px-6 flex items-center justify-center min-h-[50vh]">
+            <div class="container mx-auto text-center max-w-4xl">
+                <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6 drop-shadow-lg">
+                    Welcome to Our Awesome Service!
+                </h2>
+                <p class="text-lg sm:text-xl mb-10 opacity-90 max-w-2xl mx-auto">
+                    Discover how we can help you achieve your goals. Sign up today to get started.
+                </p>
 
-            <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Gender</label>
-                <div class="mt-1 flex flex-wrap gap-x-6 gap-y-2">
-                    <div class="flex items-center">
-                        <input type="radio" id="genderMale" name="gender" value="male" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded-full">
-                        <label for="genderMale" class="ml-2 block text-sm text-gray-900">Male</label>
+                <!-- User Registration Form -->
+                <div class="bg-white bg-opacity-15 backdrop-filter backdrop-blur-lg rounded-xl shadow-2xl p-6 sm:p-8 md:p-10 mx-auto max-w-md border border-white border-opacity-20">
+                    <h3 class="text-2xl font-bold mb-6">User Registration</h3>
+                    <form id="heroRegistrationForm">
+                        <div class="mb-4">
+                            <input
+                                type="text"
+                                id="heroUserName"
+                                placeholder="Your Name"
+                                class="w-full p-3 rounded-lg bg-white bg-opacity-20 border border-white bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-purple-300 text-white placeholder-gray-200"
+                                required
+                            />
+                        </div>
+                        <div class="mb-4">
+                            <input
+                                type="email"
+                                id="heroUserEmail"
+                                placeholder="your.email@example.com"
+                                class="w-full p-3 rounded-lg bg-white bg-opacity-20 border border-white bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-purple-300 text-white placeholder-gray-200"
+                                required
+                            />
+                        </div>
+                        <div class="mb-6">
+                            <input
+                                type="password"
+                                id="heroUserPassword"
+                                placeholder="Password"
+                                class="w-full p-3 rounded-lg bg-white bg-opacity-20 border border-white bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-purple-300 text-white placeholder-gray-200"
+                                required
+                            />
+                        </div>
+                        <button
+                            type="submit"
+                            class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-xl"
+                        >
+                            Submit
+                        </button>
+                        <p id="heroSubmissionMessage" class="mt-4 text-center text-sm font-medium text-green-300 hidden"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Features Section -->
+        <section class="py-16 px-4 sm:px-6 bg-gradient-to-br from-purple-500 to-indigo-600 text-white">
+            <div class="container mx-auto text-center max-w-4xl">
+                <h2 class="text-3xl sm:text-4xl font-extrabold mb-8 drop-shadow-lg">Discover Our Powerful Features</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="bg-white bg-opacity-15 backdrop-filter backdrop-blur-lg rounded-xl shadow-xl p-6 border border-white border-opacity-20 transform transition-transform duration-300 hover:scale-105">
+                        <h3 class="text-xl font-bold mb-3 text-white">Intuitive Interface</h3>
+                        <p class="text-gray-200">
+                            Our user-friendly design ensures a seamless experience, making complex tasks simple and enjoyable.
+                        </p>
                     </div>
-                    <div class="flex items-center">
-                        <input type="radio" id="genderFemale" name="gender" value="female" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded-full">
-                        <label for="genderFemale" class="ml-2 block text-sm text-gray-900">Female</label>
+                    <!-- Feature 2 -->
+                    <div class="bg-white bg-opacity-15 backdrop-filter backdrop-blur-lg rounded-xl shadow-xl p-6 border border-white border-opacity-20 transform transition-transform duration-300 hover:scale-105">
+                        <h3 class="text-xl font-bold mb-3 text-white">Robust Security</h3>
+                        <p class="text-gray-200">
+                            We prioritize your data's safety with cutting-edge encryption and secure protocols.
+                        </p>
                     </div>
-                    <div class="flex items-center">
-                        <input type="radio" id="genderOther" name="gender" value="other" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded-full">
-                        <label for="genderOther" class="ml-2 block text-sm text-gray-900">Other</label>
+                    <!-- Feature 3 -->
+                    <div class="bg-white bg-opacity-15 backdrop-filter backdrop-blur-lg rounded-xl shadow-xl p-6 border border-white border-opacity-20 transform transition-transform duration-300 hover:scale-105">
+                        <h3 class="text-xl font-bold mb-3 text-white">24/7 Support</h3>
+                        <p class="text-gray-200">
+                            Our dedicated support team is always ready to assist you, day or night.
+                        </p>
                     </div>
-                    <div class="flex items-center">
-                        <input type="radio" id="genderPreferNotToSay" name="gender" value="prefer_not_to_say" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded-full">
-                        <label for="genderPreferNotToSay" class="ml-2 block text-sm text-gray-900">Prefer not to say</label>
+                    <!-- Feature 4 -->
+                    <div class="bg-white bg-opacity-15 backdrop-filter backdrop-blur-lg rounded-xl shadow-xl p-6 border border-white border-opacity-20 transform transition-transform duration-300 hover:scale-105">
+                        <h3 class="text-xl font-bold mb-3 text-white">Cross-Device Compatibility</h3>
+                        <p class="text-gray-200">
+                            Access our service seamlessly from any device – desktop, tablet, or mobile.
+                        </p>
+                    </div>
+                    <!-- Feature 5 -->
+                    <div class="bg-white bg-opacity-15 backdrop-filter backdrop-blur-lg rounded-xl shadow-xl p-6 border border-white border-opacity-20 transform transition-transform duration-300 hover:scale-105">
+                        <h3 class="text-xl font-bold mb-3 text-white">Regular Updates</h3>
+                        <p class="text-gray-200">
+                            Benefit from continuous improvements and new features delivered regularly.
+                        </p>
+                    </div>
+                    <!-- Feature 6 -->
+                    <div class="bg-white bg-opacity-15 backdrop-filter backdrop-blur-lg rounded-xl shadow-xl p-6 border border-white border-opacity-20 transform transition-transform duration-300 hover:scale-105">
+                        <h3 class="text-xl font-bold mb-3 text-white">Community Driven</h3>
+                        <p class="text-gray-200">
+                            Join a vibrant community and contribute to the future of our service.
+                        </p>
                     </div>
                 </div>
             </div>
+        </section>
+    </main>
 
-            <div>
-                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="you@example.com"
-                       class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition duration-150 ease-in-out">
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-gray-300 p-6 text-center text-sm mt-auto" id="contact">
+        <div class="container mx-auto">
+            <p>&copy; 2023 MyBrand. All rights reserved.</p>
+            <p class="mt-2">Contact: info@mybrand.com</p>
+            <div class="flex justify-center space-x-4 mt-4" id="about">
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
             </div>
+        </div>
+    </footer>
 
-            <div>
-                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="e.g., +1 (555) 123-4567"
-                       class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition duration-150 ease-in-out">
-            </div>
+    <script>
+        // DOM Elements for Hero Registration Form
+        const heroRegistrationForm = document.getElementById('heroRegistrationForm');
+        const heroUserNameInput = document.getElementById('heroUserName');
+        const heroUserEmailInput = document.getElementById('heroUserEmail');
+        const heroUserPasswordInput = document.getElementById('heroUserPassword');
+        const heroSubmissionMessageP = document.getElementById('heroSubmissionMessage');
 
-            <div>
-                <label for="occupation" class="block text-sm font-medium text-gray-700 mb-1">Occupation</label>
-                <input type="text" id="occupation" name="occupation" placeholder="Your profession"
-                       class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition duration-150 ease-in-out">
-            </div>
+        let heroSubmissionMessage = '';
 
-            <div>
-                <label for="maritalStatus" class="block text-sm font-medium text-gray-700 mb-1">Marital Status</label>
-                <select id="maritalStatus" name="maritalStatus"
-                        class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition duration-150 ease-in-out">
-                    <option value="">Select...</option>
-                    <option value="single">Single</option>
-                    <option value="married">Married</option>
-                    <option value="divorced">Divorced</option>
-                    <option value="widowed">Widowed</option>
-                </select>
-            </div>
+        // Function to update the submission message display for hero form
+        const updateHeroSubmissionMessage = () => {
+            if (heroSubmissionMessage) {
+                heroSubmissionMessageP.textContent = heroSubmissionMessage;
+                heroSubmissionMessageP.classList.remove('hidden');
+                setTimeout(() => {
+                    heroSubmissionMessageP.classList.add('hidden');
+                    heroSubmissionMessage = '';
+                }, 5000);
+            } else {
+                heroSubmissionMessageP.classList.add('hidden');
+            }
+        };
 
-            <div>
-                <label for="emergencyContactName" class="block text-sm font-medium text-gray-700 mb-1">Emergency Contact Name</label>
-                <input type="text" id="emergencyContactName" name="emergencyContactName" placeholder="Name of emergency contact"
-                       class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition duration-150 ease-in-out">
-            </div>
+        // Hero Registration Form Submission
+        heroRegistrationForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const heroUserName = heroUserNameInput.value;
+            const heroUserEmail = heroUserEmailInput.value;
+            const heroUserPassword = heroUserPasswordInput.value;
 
-            <div>
-                <label for="emergencyContactPhone" class="block text-sm font-medium text-gray-700 mb-1">Emergency Contact Phone</label>
-                <input type="tel" id="emergencyContactPhone" name="emergencyContactPhone" placeholder="Phone of emergency contact"
-                       class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition duration-150 ease-in-out">
-            </div>
+            if (heroUserName.trim() === '' || heroUserEmail.trim() === '' || heroUserPassword.trim() === '') {
+                heroSubmissionMessage = 'Please fill in all fields (Name, Email, and Password).';
+                heroSubmissionMessageP.style.color = 'red';
+                updateHeroSubmissionMessage();
+                return;
+            }
+            if (!/\S+@\S+\.\S+/.test(heroUserEmail)) {
+                heroSubmissionMessage = 'Please enter a valid email address.';
+                heroSubmissionMessageP.style.color = 'red';
+                updateHeroSubmissionMessage();
+                return;
+            }
+            if (heroUserPassword.length < 6) {
+                heroSubmissionMessage = 'Password must be at least 6 characters long.';
+                heroSubmissionMessageP.style.color = 'red';
+                updateHeroSubmissionMessage();
+                return;
+            }
 
-            <div class="pt-4">
-                <button type="submit"
-                        class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
-                    Submit
-                </button>
-            </div>
-        </form>
-    </div>
+            console.log('Hero User Details Submitted:', { name: heroUserName, email: heroUserEmail, password: heroUserPassword });
+            heroSubmissionMessage = `Thank you, ${heroUserName}! Your registration details have been submitted.`;
+            heroSubmissionMessageP.style.color = '#86efac';
+            updateHeroSubmissionMessage();
+            // Optionally clear the fields after submission
+            // heroUserNameInput.value = '';
+            // heroUserEmailInput.value = '';
+            // heroUserPasswordInput.value = '';
+        });
+
+        // Initial render when the page loads
+        window.onload = updateHeroSubmissionMessage;
+
+    </script>
 </body>
 </html>
